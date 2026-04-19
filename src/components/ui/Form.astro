@@ -8,25 +8,19 @@ import decorForm from "../../assets/pics/contact-pic.png";
   <div class="bg-gray sm:p-6 h-full w-full lg:max-w-lg">
     <h2 class="text-black text-3xl font-bold mb-4">Need Help?</h2>
     <p class="text-black mb-8">Submit a support ticket and our team will get back to you.</p>
-    <button id="open-ticket-btn" class="btn-primary w-full">
-      Send a Ticket
-    </button>
+    <iframe
+      src="https://desk.zoho.com/support/fbw?formType=AdvancedWebForm&fbwId=edbsnf18151514662c50c70f6b3b80c78b38741762cbe7c7c32e66762593c177bab50&xnQsjsdp=edbsnc6c0d4bc795aa6aa9bfeb55ebccf4ab3&mode=showNewWidget&displayType=iframe"
+      width="100%"
+      height="570"
+      name="zsfeedbackFrame"
+      scrolling="no"
+      allowtransparency="true"
+      frameborder="0"
+      border="0"
+      class="rounded-[14px]"
+    ></iframe>
   </div>
   <picture class="absolute right-[-25%] top-[2%] bottom-[2%] hidden lg:block">
     <Image src={decorForm} alt="decor" />
   </picture>
 </div>
-
-<script src="https://desk.zoho.com/portal/api/feedbackwidget/1316748000000412003?orgId=921359537&displayType=popout"></script>
-
-<script>
-  document.getElementById("open-ticket-btn")?.addEventListener("click", () => {
-    const interval = setInterval(() => {
-      const zohoBtn = document.querySelector("[id^='zsWebToCase']") as HTMLElement;
-      if (zohoBtn) {
-        zohoBtn.click();
-        clearInterval(interval);
-      }
-    }, 200);
-  });
-</script>
