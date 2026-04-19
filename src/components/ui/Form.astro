@@ -5,22 +5,171 @@ import decorForm from "../../assets/pics/contact-pic.png";
 <div
   class="flex relative justify-start items-center p-[60px] bg-[#F3F3F3] rounded-[45px] overflow-hidden"
 >
-  <div class="bg-gray sm:p-6 h-full w-full lg:max-w-lg">
-    <h2 class="text-black text-3xl font-bold mb-4">Need Help?</h2>
-    <p class="text-black mb-8">Submit a support ticket and our team will get back to you.</p>
-    <iframe
-      src="https://desk.zoho.com/support/fbw?formType=AdvancedWebForm&fbwId=edbsnf18151514662c50c70f6b3b80c78b38741762cbe7c7c32e66762593c177bab50&xnQsjsdp=edbsnc6c0d4bc795aa6aa9bfeb55ebccf4ab3&mode=showNewWidget&displayType=iframe"
-      width="100%"
-      height="570"
-      name="zsfeedbackFrame"
-      scrolling="no"
-      allowtransparency="true"
-      frameborder="0"
-      border="0"
-      class="rounded-[14px]"
-    ></iframe>
-  </div>
+  <form
+    name="zsWebToCase_1316748000000412023"
+    id="zsWebToCase_1316748000000412023"
+    action="https://desk.zoho.com/support/WebToCase"
+    method="POST"
+    enctype="multipart/form-data"
+    class="bg-gray sm:p-6 h-full w-full lg:max-w-lg"
+  >
+    <input type="hidden" name="xnQsjsdp" value="edbsnc6c0d4bc795aa6aa9bfeb55ebccf4ab3"/>
+    <input type="hidden" name="xmIwtLD" value="edbsnf18151514662c50c70f6b3b80c78b387666a4a27327865f083ab37927ba6553d"/>
+    <input type="hidden" name="xJdfEaS" value=""/>
+    <input type="hidden" name="actionType" value="Q2FzZXM="/>
+    <input type="hidden" id="property(module)" value="Cases"/>
+    <input type="hidden" name="returnURL" value="https://outryx.vercel.app/"/>
+
+    <div class="flex flex-col sm:flex-row gap-[35px] sm:items-center mb-10">
+      <div class="flex items-center gap-[14px]">
+        <input
+          type="checkbox"
+          id="checkbox1"
+          name="checkbox1"
+          class="form-checkbox text-black"
+        />
+        <label for="checkbox1" class="text-black">Send ticket</label>
+      </div>
+      <div class="flex items-center gap-[14px]">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="name" class="block text-black mb-2">Name*</label>
+      <input
+        type="text"
+        id="name"
+        name="Contact Name"
+        placeholder="Name"
+        maxlength="120"
+        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="email" class="block text-black mb-2">Email*</label>
+      <input
+        type="email"
+        id="email"
+        name="Email"
+        placeholder="Email"
+        maxlength="120"
+        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="subject" class="block text-black mb-2">Subject*</label>
+      <input
+        type="text"
+        id="subject"
+        name="Subject"
+        placeholder="Subject"
+        maxlength="255"
+        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="message" class="block text-black mb-2">Message*</label>
+      <textarea
+        id="message"
+        name="Description"
+        placeholder="Message"
+        maxlength="3000"
+        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      id="zsSubmitButton_1316748000000412023"
+      class="btn-primary w-full"
+    >
+      Send
+    </button>
+  </form>
+
   <picture class="absolute right-[-25%] top-[2%] bottom-[2%] hidden lg:block">
     <Image src={decorForm} alt="decor" />
   </picture>
 </div>
+
+<style>
+  .form-checkbox {
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+  .form-checkbox:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--green);
+    transform: scale(0);
+    transition: transform 0.1s ease-in-out;
+  }
+  .form-checkbox:checked:before {
+    transform: scale(0.6);
+  }
+</style>
+
+<script>
+  function formSetup() {
+    var cb1 = document.getElementById("checkbox1") as HTMLInputElement;
+    var cb2 = document.getElementById("checkbox2") as HTMLInputElement;
+    var message = document.getElementById("message") as HTMLInputElement;
+    var subject = document.getElementById("subject") as HTMLInputElement;
+    if (cb1 && cb2) {
+      cb1.checked = true;
+      cb2.addEventListener("change", function () {
+        if (cb2.checked) {
+          cb1.checked = false;
+          subject.value = "Quote Request";
+          message.value = "We're interested in your services! Please contact us";
+        } else {
+          subject.value = "";
+          message.value = "";
+          cb1.checked = true;
+        }
+      });
+      cb1.addEventListener("change", function () {
+        if (cb1.checked) {
+          cb2.checked = false;
+          subject.value = "";
+          message.value = "";
+        } else {
+          cb2.checked = true;
+          subject.value = "Quote Request";
+          message.value = "We're interested in your services! Please contact us";
+        }
+      });
+    }
+  }
+
+  function validateForm() {
+    var name = (document.getElementById("name") as HTMLInputElement).value.trim();
+    var email = (document.getElementById("email") as HTMLInputElement).value.trim();
+    var subject = (document.getElementById("subject") as HTMLInputElement).value.trim();
+    if (!name) { alert("Name cannot be empty"); return false; }
+    if (!email || !email.match(/^[\w\-_.+\'&]+@([\w]+\.)+[a-zA-Z]{2,22}$/)) {
+      alert("Enter a valid email address"); return false;
+    }
+    if (!subject) { alert("Subject cannot be empty"); return false; }
+    return true;
+  }
+
+  document.getElementById("zsWebToCase_1316748000000412023")
+    ?.addEventListener("submit", function(e) {
+      if (!validateForm()) e.preventDefault();
+    });
+
+  formSetup();
+  document.addEventListener("astro:after-swap", formSetup);
+</script>
