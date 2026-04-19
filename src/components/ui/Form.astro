@@ -7,8 +7,10 @@ import decorForm from "../../assets/pics/contact-pic.png";
 >
   <div class="bg-gray sm:p-6 h-full w-full lg:max-w-lg">
     <h2 class="text-black text-3xl font-bold mb-4">Need Help?</h2>
-    <p class="text-black mb-8">Submit a support ticket and our team will get back to you soon.</p>
-    <div id="zsfeedbackwidgetdiv"></div>
+    <p class="text-black mb-8">Submit a support ticket and our team will get back to you.</p>
+    <button id="open-ticket-btn" class="btn-primary w-full">
+      Send a Ticket
+    </button>
   </div>
   <picture class="absolute right-[-25%] top-[2%] bottom-[2%] hidden lg:block">
     <Image src={decorForm} alt="decor" />
@@ -16,3 +18,10 @@ import decorForm from "../../assets/pics/contact-pic.png";
 </div>
 
 <script src="https://desk.zoho.com/portal/api/feedbackwidget/1316748000000412003?orgId=921359537&displayType=popout"></script>
+
+<script>
+  document.getElementById("open-ticket-btn")?.addEventListener("click", () => {
+    const zohoBtn = document.querySelector("[id^='zsWebToCase_Button']") as HTMLElement;
+    if (zohoBtn) zohoBtn.click();
+  });
+</script>
