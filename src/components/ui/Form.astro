@@ -21,7 +21,12 @@ import decorForm from "../../assets/pics/contact-pic.png";
 
 <script>
   document.getElementById("open-ticket-btn")?.addEventListener("click", () => {
-    const zohoBtn = document.querySelector("[id^='zsWebToCase_Button']") as HTMLElement;
-    if (zohoBtn) zohoBtn.click();
+    const interval = setInterval(() => {
+      const zohoBtn = document.querySelector("[id^='zsWebToCase']") as HTMLElement;
+      if (zohoBtn) {
+        zohoBtn.click();
+        clearInterval(interval);
+      }
+    }, 200);
   });
 </script>
