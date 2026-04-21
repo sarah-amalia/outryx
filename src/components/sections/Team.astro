@@ -4,15 +4,11 @@ import TeamCard from "../ui/TeamCard.astro";
 import Section from "./Section.astro";
 
 const description =
-  "Meet the skilled and experienced team behind our successful digital marketing strategies";
+  "Meet the skilled and experienced team behind our platform";
 
 // Team images
 import p1 from "../../assets/team/t1.png";
 import p2 from "../../assets/team/t2.png";
-import p3 from "../../assets/team/t3.png";
-import p4 from "../../assets/team/t4.png";
-import p5 from "../../assets/team/t5.png";
-import p6 from "../../assets/team/t6.png";
 
 const team = [
   {
@@ -20,7 +16,7 @@ const team = [
     name: "Abdu Nur Ilham",
     role: "Marketing Lead",
     description:
-      "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+      "Marketing strategy, marketing analysis, copywriting, email marketing/newsletter, social media marketing",
     link: "https://linkedin.com",
   },
   {
@@ -28,8 +24,8 @@ const team = [
     name: "Sarah Amalia",
     role: "Technical Support & Operations",
     description:
-      "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
-    link: "https://linkedin.com",
+      "Astro site, troubleshooting, help desk, knowledge base, REST API, SQL, system montoring, ticketing system, information architecture",
+    link: "https://sarah-tw.vercel.app/",
   },
 ];
 ---
@@ -52,9 +48,6 @@ const team = [
           />
         ))
       }
-    </div>
-    <div class="flex justify-end mt-10">
-      <button class="btn-primary">See all team</button>
     </div>
   </div>
 </Section>

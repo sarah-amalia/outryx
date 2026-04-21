@@ -1,12 +1,12 @@
 ---
-title: 'Our first project with Astro'
+title: 'upcoming article'
 pubDate: 2024-01-17
 author: 'Bonnie Green'
 authImage: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png'
 image: 'image3.png'
 tags: ['samsung', 'smartphones', 'gadgets']
 slug: elevate-your-mobile-experience-with-samsung
-summary: "In the ever-evolving world of mobile technology, Samsung has consistently delivered cutting-edge devices that redefine the way we experience the digital world."
+summary: "upcoming summary"
 type: "Article"
 ---
 
