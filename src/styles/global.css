@@ -4,16 +4,34 @@
 
 @layer base {
   @font-face {
-    font-family: "Grotesk";
-    src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff"), format("woff");
+    font-family: "monserrat alternatives";
+    src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Grotesk";
-    src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff"), format("woff");
+    font-family: "monserrat alternatives";
+    src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "poppins";
+    src: url("/fonts/poppins/Poppins-Regular.woff2") format("woff2"),
+         url("/fonts/poppins/Poppins-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "poppins";
+    src: url("/fonts/poppins/Poppins-Medium.woff2") format("woff2"),
+         url("/fonts/poppins/Poppins-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -29,22 +47,55 @@
   }
 
   :root {
-    --green: #b9ff66;
+    --green: #dcf4a2;
     --black: rgb(0, 0, 0);
-    --dark: #191a23;
+    --dark: #0055a4;
     --gray: #f3f3f3;
     --white: #ffffff;
   }
 
-  /* @layer base {
-    * {
-      box-sizing: border-box;
-      font-family: "Grotesk", sans-serif;
-      scroll-behavior: smooth;
-    }
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
 
+  body {
+    font-family: "poppins", sans-serif;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "monserrat alternatives", sans-serif;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 120%;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
     body {
-      font-size: 20px;
+      font-size: 16px;
     }
 
     p {
@@ -52,52 +103,21 @@
     }
 
     h1 {
-      font-size: 3rem;
-      line-height: 120%;
-      font-weight: 500;
+      font-size: 2.688rem;
     }
 
     h2 {
-      font-size: 2rem;
-      font-weight: 500;
+      font-size: 2.25rem;
     }
 
     h3 {
-      font-size: 1.5rem;
-      font-weight: 500;
+      font-size: 1.625rem;
     }
 
     h4 {
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 1.125rem;
     }
-
-    @media (max-width: 640px) {
-      body {
-        font-size: 16px;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      h1 {
-        font-size: 2.688rem;
-      }
-
-      h2 {
-        font-size: 2.25rem;
-      }
-
-      h3 {
-        font-size: 1.625rem;
-      }
-
-      h4 {
-        font-size: 1.125rem;
-      }
-    }
-  } */
+  }
 
   @layer components {
     .btn-primary {
