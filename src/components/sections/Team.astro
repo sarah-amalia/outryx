@@ -6,7 +6,6 @@ import Section from "./Section.astro";
 const description =
   "Meet the skilled and experienced team behind our platform";
 
-// Team images
 import p1 from "../../assets/team/t1.png";
 import p2 from "../../assets/team/t2.png";
 
@@ -25,7 +24,7 @@ const team = [
     role: "Technical Support & Operations",
     description:
       "Handles support and system operations for outryx end-to-end. Covers help desk management, knowledge base, API documentation, and system monitoring.",
-    link: "https://sarah-tw.vercel.app/",
+    website: "https://sarah-tw.vercel.app/",
   },
 ];
 ---
@@ -33,9 +32,7 @@ const team = [
 <Section id="about">
   <div class="mt-[140px]">
     <SectionTitle sectionTitle="Team" description={description} />
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10">
       {
         team.map((member, index) => (
           <TeamCard
@@ -45,6 +42,7 @@ const team = [
             role={member.role}
             description={member.description}
             link={member.link}
+            website={member.website}
           />
         ))
       }
