@@ -1,9 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import Facebook from "../../assets/facebook.svg";
 import Linkedin from "../../assets/linkedin.svg";
-import Logo from "../../assets/logo-alt.svg";
-import Twitter from "../../assets/twitter.svg";
+import Logo from "../../assets/outryx-white.svg";
 import ShortForm from "../ui/ShortForm.astro";
 
 const logos = [
@@ -21,103 +19,94 @@ const links = [
 
 <section class="sm:px-5">
   <div class="w-full max-w-[1240px] mx-auto">
-    <div
-      class="px-[15px] bg-dark text-gray py-[55px] lg:px-[60px] sm:rounded-t-[45px]"
-    >
-      <div>
-        <div
-          class="flex flex-col lg:flex-row gap-7 items-center justify-between"
-        >
-          <picture>
-            <a href="#home">
-              <Image src={Logo} alt="Logo for Kreatif Brand" />
-            </a>
-          </picture>
-          <ul class="flex flex-col sm:flex-row gap-5">
-            {
-              links.map((link) => {
-                return (
-                  <li class="text-center">
-                    <a class="underline" href={link.href}>
-                      {link.name}
-                    </a>
-                  </li>
-                );
-              })
-            }
-          </ul>
-          <ul class="flex gap-5">
-            {
-              logos.map((logo) => {
-                return (
-                  <li>
-                    <a href={logo.link} target="_blank">
-                      <picture>
-                        <Image src={logo.src} alt={logo.name} />
-                      </picture>
-                    </a>
-                  </li>
-                );
-              })
-            }
-          </ul>
-        </div>
+    <div class="footer-wrap px-[15px] py-[55px] lg:px-[60px] sm:rounded-t-[45px]">
 
-        <div class="flex flex-col lg:flex-row mt-[66px] mb-[51px]">
-          <div
-            class="flex text-center lg:text-start flex-col w-full lg:w-[30%]"
-          >
-            <h3 class="mb-5 text-center md:text-left text-2xl text-green">Contact us</h3>
-            <div class="flex flex-col justify-between gap-4">
-              <span> support@outryx.zohodesk.com </span>
-              <span>  </span>
-              <span class="lg:w-3/4">
-                
-              </span>
-            </div>
+      <!-- Top row: logo / nav / social -->
+      <div class="flex flex-col lg:flex-row gap-7 items-center justify-between">
+        <picture>
+          <a href="#home">
+            <Image src={Logo} alt="Logo" class="footer-logo" />
+          </a>
+        </picture>
+
+        <ul class="flex flex-col sm:flex-row gap-5">
+          {links.map((link) => (
+            <li class="text-center">
+              <a href={link.href} class="footer-link underline">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <ul class="flex gap-5">
+          {logos.map((logo) => (
+            <li>
+              <a href={logo.link} target="_blank">
+                <picture>
+                  <Image src={logo.src} alt={logo.name} />
+                </picture>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Middle row: contact + form -->
+      <div class="flex flex-col lg:flex-row mt-[66px] mb-[51px]">
+        <div class="flex text-center lg:text-start flex-col w-full lg:w-[30%]">
+          <h3 class="footer-contact-heading mb-5 text-center md:text-left text-2xl">
+            Contact us
+          </h3>
+          <div class="flex flex-col justify-between gap-4 footer-body-text">
+            <span>support@outryx.zohodesk.com</span>
           </div>
-          <div class="flex-grow my-10 lg:my-0 lg:ml-12">
-            <ShortForm />
-          </div>
+        </div>
+        <div class="flex-grow my-10 lg:my-0 lg:ml-12">
+          <ShortForm />
         </div>
       </div>
 
-      <div class="h-[1px] bg-gray mb-5"></div>
-      <div
-        class="flex flex-col lg:flex-row h-20 justify-center mt-4 text-center md:justify-between md:mt-0"
-      >
-        <span
-          >2026 outryx<a
-            class="underline"
-            target="_blank"
-            href="https://astro.build"></a
-          > 
-          <a 
-          class="underline"
-          target="_blank"
-          href="https://manulthanura.com"></a
-          ></span
-        >&nbsp
-        <span>
-           
-          <a
-            href="https://www.olgaskuja.design/"
-            target="_blank"
-            class="underline"></a
-          >
-          <a
-            href="https://esteban-vasquez.netlify.app/"
-            target="_blank"
-            class="underline"></a
-          >
-          <span> </span>
-          <a
-            class="underline"
-            href="https://creativecommons.org/licenses/by/4.0/"
-            target="_blank"></a
-          >
-        </span>
+      <!-- Divider -->
+      <div class="footer-divider h-[1px] mb-5"></div>
+
+      <!-- Bottom row: copyright -->
+      <div class="flex flex-col lg:flex-row h-20 justify-center mt-4 text-center md:justify-between md:mt-0 footer-body-text">
+        <span>2026 outryx</span>
       </div>
+
     </div>
   </div>
 </section>
+
+<style>
+  .footer-wrap {
+    background-color: #7d8285;
+  }
+
+  .footer-logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .footer-link {
+    color: #f3f3f3;
+    transition: color 0.2s ease;
+  }
+  .footer-link:hover {
+    color: #dcf4a2;
+  }
+
+  .footer-contact-heading {
+    color: #f3f3f3;
+    font-family: "monserrat alternatives", sans-serif;
+  }
+
+  .footer-body-text {
+    color: #f3f3f3;
+  }
+
+  .footer-divider {
+    background-color: #9a9d9f;
+  }
+</style>

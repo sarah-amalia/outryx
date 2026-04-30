@@ -1,16 +1,30 @@
-<form
-  class="bg-[#292A32] px-10 py-14 rounded-[14px] gap-5 h-full flex flex-col sm:flex-row items-center justify-center"
->
+<form class="shortform-wrap px-10 py-14 rounded-[14px] gap-5 h-full flex flex-col sm:flex-row items-center justify-center">
   <div class="w-full sm:w-[55%]">
     <input
       type="text"
       id="email"
       name="email"
       placeholder="Email"
-      class="bg-transparent w-full px-[35px] py-5 border rounded-[14px] focus:outline-none"
+      class="shortform-input bg-transparent w-full px-[35px] py-5 border rounded-[14px] focus:outline-none"
     />
   </div>
-  <button type="submit" name="submit" class="w-full sm:w-[45%] btn-tertiary"
-    >Subscribe to news</button
-  >
+  <button type="submit" name="submit" class="w-full sm:w-[45%] btn-tertiary">
+    Subscribe to news
+  </button>
 </form>
+
+<style>
+  .shortform-wrap {
+    background-color: #6b6e71;
+    border: 1px solid #9a9d9f;
+  }
+
+  .shortform-input {
+    color: #f3f3f3;
+    border-color: #9a9d9f;
+  }
+
+  .shortform-input::placeholder {
+    color: #c0c2c4;
+  }
+</style>
