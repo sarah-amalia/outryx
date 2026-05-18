@@ -3,81 +3,59 @@ import SectionTitle from "../ui/SectionTitle.astro";
 import ServiceCard from "../ui/ServiceCard.astro";
 import Section from "./Section.astro";
 
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
-import c4 from "../../assets/pics/card-pic4.png";
-import c5 from "../../assets/pics/card-pic5.png";
-import c6 from "../../assets/pics/card-pic6.png";
-
 const cards = [
   {
-    index: 1,
+    colorIndex: 1,
     titleTop: "Creating Email",
     titleBottom: "in Minutes",
-    img: c1,
-    alt: "SEO",
-    link: "https://google.com",
+    description: "Build and send professional email campaigns in minutes with our intuitive drag-and-drop editor and pre-built templates.",
   },
   {
-    index: 2,
-    titleTop: "Service",
-    titleBottom: "2",
-    img: c2,
-    alt: "SEO",
-    link: "https://google.com",
+    colorIndex: 2,
+    titleTop: "Pay-per-click",
+    titleBottom: "Advertising",
+    description: "Maximize your advertising budget with targeted campaigns that reach the right audience at the right time.",
   },
   {
-    index: 3,
-    titleTop: "Service",
-    titleBottom: "3",
-    img: c3,
-    alt: "SEO",
-    link: "https://google.com",
+    colorIndex: 3,
+    titleTop: "Social Media",
+    titleBottom: "Marketing",
+    description: "Build and engage your audience across social media platforms with content creation and community management.",
   },
   {
-    index: 1,
-    titleTop: "Service",
-    titleBottom: "3",
-    img: c4,
-    alt: "SEO",
-    link: "https://google.com",
+    colorIndex: 1,
+    titleTop: "Email",
+    titleBottom: "Marketing",
+    description: "Nurture leads and maintain customer relationships through personalized campaigns and automated workflows.",
   },
   {
-    index: 2,
-    titleTop: "Service",
-    titleBottom: "4",
-    img: c5,
-    alt: "SEO",
-    link: "https://google.com",
+    colorIndex: 2,
+    titleTop: "Content",
+    titleBottom: "Creation",
+    description: "High-quality content that resonates with your audience — blog posts, articles, ebooks, infographics, and more.",
   },
   {
-    index: 3,
-    titleTop: "Service",
-    titleBottom: "5",
-    img: c6,
-    alt: "SEO",
-    link: "https://google.com",
+    colorIndex: 3,
+    titleTop: "Analytics and",
+    titleBottom: "Tracking",
+    description: "Make data-driven decisions with comprehensive tracking, custom dashboards, and actionable performance insights.",
   },
 ];
 
-const description =
-  "Upcoming";
+const description = "Upcoming";
 ---
 
 <Section id="services">
   <div class="mt-[140px] mb-5">
     <SectionTitle sectionTitle="Services" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
+    <div class="grid lg:grid-cols-2 gap-10">
       {
         cards.map((card) => (
           <ServiceCard
-            index={card.index}
+            index={card.colorIndex}
             titleTop={card.titleTop}
             titleBottom={card.titleBottom}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
+            description={card.description}
           />
         ))
       }
